@@ -22,12 +22,12 @@ function App() {
   return (
     <>
       <Layout>
-        <div className="pt-40">
+        <div className="pt-40? h-screen flex justify-center items-center">
           <button
             onClick={toggleTheme}
             className="px-6 py-3 text-2xl rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white text-black"
           >
-            Toggle to {theme === "light" ? "Dark" : "Light"} Mode
+            starting...
           </button>
         </div>
       </Layout>
