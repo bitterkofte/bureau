@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "./components/Layout/Layout";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,14 +23,15 @@ function App() {
   return (
     <>
       <Layout>
-        <div className="pt-40? h-screen flex justify-center items-center">
+        {/* <div className="pt-40? h-screen flex justify-center items-center">
           <button
             onClick={toggleTheme}
             className="px-6 py-3 text-2xl rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white text-black"
           >
             starting...
           </button>
-        </div>
+        </div> */}
+        <HomePage />
       </Layout>
     </>
   );
