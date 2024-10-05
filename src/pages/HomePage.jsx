@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import BulletHeader from "../components/Elements/BulletHeader";
-import useInView from "../hooks/UseInView";
+import useInView from "../hooks/useInView";
 
 const HomePage = () => {
   const introRef = useInView();
