@@ -37,3 +37,19 @@
 .hiddenx {
   transform: translateY(-80px);
 }
+
+.navbar-bg {
+  backdrop-filter: blur(8px);
+  background-color: rgba(132, 135, 188, 0.636);
+}
+
+.text-intro {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.text-intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s;
+}

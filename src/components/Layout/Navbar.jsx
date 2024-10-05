@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <nav
       // className={`active ${!show && "hidden"}`}
-      className={`w-full h-20 p-5 fixed top-0 left-0 z-10 flex justify-between items-center bg-slate-400 dark:bg-slate-700 dark:text-white visiblex ${
+      className={`w-full h-20 p-5 fixed top-0 left-0 z-10 flex justify-between items-center font-bold navbar-bg ?bg-slate-200 ?backdrop-blur-xl dark:bg-slate-700 dark:text-white select-none visiblex ${
         !show && "hiddenx"
       }`}
     >
