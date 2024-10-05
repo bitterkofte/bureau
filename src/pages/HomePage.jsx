@@ -49,7 +49,7 @@ const HomePage = () => {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
-      <div className="px-36 py-8">
+      <div className="px-10 lg:px-36 py-8">
         <div className="border-2 mt-8"></div>
         <BulletHeader id="ekibimiz">Ekibimiz</BulletHeader>
         <div ref={introRef} className="text-intro">

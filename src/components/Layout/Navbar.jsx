@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "../Elements/Link";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -42,7 +43,7 @@ const Navbar = () => {
         !show && "hiddenx"
       }`}
     >
-      <ul className="flex gap-11">
+      <ul className="hidden lg:flex gap-11">
         <li>
           <Link>Anasayfa</Link>
         </li>
@@ -75,6 +76,10 @@ const Navbar = () => {
         <li>İletişim</li>
         <li>Online Danışmanlık</li> */}
       </ul>
+
+      <button className="lg:hidden text-3xl">
+        <FiMenu />
+      </button>
       <div>
         <button
           onClick={toggleTheme}
