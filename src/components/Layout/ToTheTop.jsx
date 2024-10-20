@@ -39,7 +39,7 @@ const ToTheTop = () => {
       onMouseEnter={() => setMoveUp(true)}
       onMouseLeave={() => setMoveUp(false)}
       onClick={scrollToTop}
-      className="fixed bottom-3 right-3 z-50 text-white p-4 bg-slate-700 rounded-full drop-shadow-lg cursor-pointer"
+      className="fixed bottom-3 right-3 z-50 text-white p-4 bg-lp-brown-lighter rounded-full drop-shadow-lg cursor-pointer"
     >
       <BiUpArrow
         className={`${

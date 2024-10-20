@@ -8,22 +8,20 @@
   scroll-behavior: smooth;
 }
 
+/* PIN SLIDER STYLE */
 .swiper {
   width: 100%;
   height: 100%;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -31,25 +29,148 @@
   object-fit: cover;
 }
 
+/* PIN NAVBAR ANIMATION */
 .visiblex {
   transition: transform 0.2s;
 }
 .hiddenx {
   transform: translateY(-80px);
 }
-
 .navbar-bg {
   backdrop-filter: blur(8px);
-  background-color: rgba(132, 135, 188, 0.636);
+  /* background-color: rgba(132, 135, 188, 0.636); */
+  background-color: #77212c9d;
+  background-color: #7939419d;
+  background-color: #7b50569d;
+  background-color: #ffffffa4;
 }
 
+/* PIN HOME PAGE TEXT ANIMATION */
 .text-intro {
   opacity: 0;
   transform: translateY(30px);
 }
-
 .text-intro.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: transform 1.5s;
+  transition: opacity 1.5s 0.3s, transform 1.5s 0.3s;
+}
+
+.design-1 figure {
+  width: 275px;
+  height: 275px;
+  /* aspect-ratio: 8 / 5; */
+  --bg: hsl(352 57% calc(90% - (var(--hover) * 10%)));
+  --accent: hsl(352, 57%, 30%);
+  transition: background 0.2s;
+  background: radial-gradient(
+      circle at top left,
+      var(--accent),
+      transparent 75%
+    ),
+    var(--bg);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+.design-1 figure:after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  bottom: 0%;
+  left: 10%;
+  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+  filter: blur(25px);
+  transform: translateX(calc(var(--hover) * 15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s, background 0.2s;
+}
+.design-1 img {
+  width: 80%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  transform: translateX(calc(var(--hover) * 10%))
+    translateY(calc(var(--hover) * -10%)) scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+.design-1 p {
+  position: absolute;
+  z-index: 50;
+  color: white;
+  text-shadow: 2px 2px 15px rgb(49, 49, 49);
+  font-weight: bolder;
+  bottom: -20px;
+  left: 20px;
+  /* z-index: 0; */
+  transform: translateY(calc(var(--hover) * -130%));
+  transition: transform 0.2s;
+}
+.design-1 figure {
+  --hover: 0;
+}
+.design-1 figure:hover {
+  --hover: 1;
+}
+
+.design-2 {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  /* cursor: pointer; */
+  position: relative;
+  color: rgb(240, 240, 240);
+  background-color: #000;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-out;
+  }
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+  }
+  p,
+  a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+  }
+  p {
+    inset: auto auto 80px 30px;
+  }
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset 0.3s ease-out;
+  }
+  &:hover p,
+  &:hover a {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+  }
+  &:hover img {
+    transition: opacity 0.3s ease-in;
+    opacity: 0.5;
+  }
+}
+.material-symbols-outlined {
+  vertical-align: middle;
 }

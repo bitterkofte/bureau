@@ -3,6 +3,7 @@ import Link from "../Elements/Link";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
+import Logo from "../../assets/logo1.svg";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -39,44 +40,47 @@ const Navbar = () => {
   return (
     <nav
       // className={`active ${!show && "hidden"}`}
-      className={`w-full h-20 p-5 fixed top-0 left-0 z-10 flex justify-between items-center font-bold navbar-bg ?bg-slate-200 ?backdrop-blur-xl dark:bg-slate-700 dark:text-white select-none visiblex ${
+      className={`w-full h-20 p-5 fixed top-0 left-0 z-10 flex justify-between items-center font-bold shadow-md drop-shadow-lg navbar-bg ?bg-slate-200 ?backdrop-blur-xl dark:bg-lp-1 text-lp-brown dark:text-white select-none visiblex ${
         !show && "hiddenx"
       }`}
     >
-      <ul className="hidden lg:flex gap-11">
-        <li>
-          <Link>Anasayfa</Link>
-        </li>
-        <li>
-          <Link>
-            <a href="#ekibimiz">Ekibimiz</a>
-          </Link>
-        </li>
-        <li>
-          <Link>
-            <a href="#calisma-alanlarimiz">Çalışma Alanlarımız</a>
-          </Link>
-        </li>
-        <li>
-          <Link>Kariyer</Link>
-        </li>
-        <li>
-          <Link>Blog</Link>
-        </li>
-        <li>
-          <Link>İletişim</Link>
-        </li>
-        <li>
-          <Link>Online Danışmanlık</Link>
-        </li>
-        {/* <li>Ekibimiz</li>
+      <div className="flex items-center gap-5">
+        <img className="w-10 h-10 select-none" src={Logo} alt="Logo" />
+
+        <ul className="hidden lg:flex gap-11">
+          <li>
+            <Link>Anasayfa</Link>
+          </li>
+          <li>
+            <Link>
+              <a href="#ekibimiz">Ekibimiz</a>
+            </Link>
+          </li>
+          <li>
+            <Link>
+              <a href="#calisma-alanlarimiz">Çalışma Alanlarımız</a>
+            </Link>
+          </li>
+          <li>
+            <Link>Kariyer</Link>
+          </li>
+          <li>
+            <Link>Blog</Link>
+          </li>
+          <li>
+            <Link>İletişim</Link>
+          </li>
+          <li>
+            <Link>Online Danışmanlık</Link>
+          </li>
+          {/* <li>Ekibimiz</li>
         <li>Çalışma Alanlarımız</li>
         <li>Kariyer</li>
         <li>Blog</li>
         <li>İletişim</li>
         <li>Online Danışmanlık</li> */}
-      </ul>
-
+        </ul>
+      </div>
       <button className="lg:hidden text-3xl">
         <FiMenu />
       </button>

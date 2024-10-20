@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import BulletHeader from "../components/Elements/BulletHeader";
 import useInView from "../hooks/useInView";
+import Team from "../components/Special/Team";
+import HPSection from "../components/Special/HPSection";
 
 const HomePage = () => {
   const introRef = useInView();
@@ -17,8 +19,6 @@ const HomePage = () => {
   return (
     <div className="pt-20">
       <Swiper
-        // slidesPerView={1}
-        // spaceBetween={30}
         className="select-none"
         autoplay={{
           delay: 3000,
@@ -40,89 +40,46 @@ const HomePage = () => {
         <SwiperSlide>
           <img src={B2} className="h-80" />
         </SwiperSlide>
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
       <div className="px-10 lg:px-36 py-8">
-        <div className="border-2 mt-8"></div>
-        <BulletHeader id="ekibimiz">Ekibimiz</BulletHeader>
-        <div ref={introRef} className="text-intro">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            ultrices magna sollicitudin hendrerit tincidunt. Integer faucibus,
-            neque a ultrices congue, magna purus condimentum risus, ut sagittis
-            neque ligula vel justo. Sed fermentum luctus magna, ac vulputate
-            libero tempus vel. Sed sodales orci sed orci ultricies fermentum non
-            eu lacus. Nunc non semper lectus, a rhoncus metus. Etiam vitae
-            posuere nibh. Pellentesque nec aliquam nisl. Nulla dignissim odio eu
-            nisi tempor egestas. Donec pharetra faucibus hendrerit. Proin
-            posuere faucibus nulla vel varius. Donec accumsan tellus eros, non
-            mattis leo aliquam sit amet. Aenean arcu sem, feugiat vitae
-            pellentesque vitae, finibus eu sapien. Nam rutrum nibh id tellus
-            imperdiet rhoncus. In quis mauris ut purus tristique laoreet. Nulla
-            facilisi. Aliquam maximus dui vitae aliquam dignissim. Duis et
-            porttitor diam. Sed et iaculis augue. Aliquam commodo tortor ipsum,
-            ac blandit nunc lobortis at. Aenean ornare sed magna sit amet
-            viverra. Suspendisse vitae auctor leo.
-          </p>
-          <br />
-          <p>
-            Phasellus a orci vel lectus venenatis pharetra a eget magna. Sed
-            quam metus, facilisis vestibulum ante ut, hendrerit consequat augue.
-            Quisque pellentesque sapien et leo consectetur porta. Pellentesque
-            lobortis ante vel neque elementum faucibus. Etiam auctor condimentum
-            volutpat. Mauris pharetra nibh fringilla ligula semper, eget pretium
-            leo dapibus. Suspendisse ultrices placerat sem, vitae vehicula orci
-            pharetra a. Praesent congue varius ipsum nec maximus. Integer
-            accumsan sagittis tellus sit amet suscipit. Mauris nisi massa,
-            bibendum in velit eget, placerat auctor justo. Donec vitae fermentum
-            erat, facilisis suscipit magna.
-          </p>
-        </div>
+        <HPSection title={"Avukat Kimdir?"} id={"avukat-kimdir"}>
+          Avukatlar, hukuk sisteminde adaletin sağlanması için çalışan
+          profesyonellerdir. Hukuki konularda müvekkillerine danışmanlık yapar,
+          onları temsil eder ve hukuki süreçlerde haklarını savunurlar.
+          Avukatlar, çeşitli hukuk dallarında uzmanlaşarak, bireylerin ve
+          kurumların hukuki ihtiyaçlarına yönelik çözüm önerileri sunarlar.
+          Hukukun üstünlüğünü ve adaleti sağlamak adına önemli bir rol
+          üstlenirler.
+        </HPSection>
 
-        <div className="border-2 mt-8"></div>
-        <BulletHeader id="calisma-alanlarimiz">
-          Çalışma Alanlarımız
-        </BulletHeader>
-        <div ref={introRef2} className="text-intro">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            ultrices magna sollicitudin hendrerit tincidunt. Integer faucibus,
-            neque a ultrices congue, magna purus condimentum risus, ut sagittis
-            neque ligula vel justo. Sed fermentum luctus magna, ac vulputate
-            libero tempus vel. Sed sodales orci sed orci ultricies fermentum non
-            eu lacus. Nunc non semper lectus, a rhoncus metus. Etiam vitae
-            posuere nibh. Pellentesque nec aliquam nisl. Nulla dignissim odio eu
-            nisi tempor egestas. Donec pharetra faucibus hendrerit. Proin
-            posuere faucibus nulla vel varius. Donec accumsan tellus eros, non
-            mattis leo aliquam sit amet. Aenean arcu sem, feugiat vitae
-            pellentesque vitae, finibus eu sapien. Nam rutrum nibh id tellus
-            imperdiet rhoncus. In quis mauris ut purus tristique laoreet. Nulla
-            facilisi. Aliquam maximus dui vitae aliquam dignissim. Duis et
-            porttitor diam. Sed et iaculis augue. Aliquam commodo tortor ipsum,
-            ac blandit nunc lobortis at. Aenean ornare sed magna sit amet
-            viverra. Suspendisse vitae auctor leo.
-          </p>
-          <br />
-          <p>
-            Phasellus a orci vel lectus venenatis pharetra a eget magna. Sed
-            quam metus, facilisis vestibulum ante ut, hendrerit consequat augue.
-            Quisque pellentesque sapien et leo consectetur porta. Pellentesque
-            lobortis ante vel neque elementum faucibus. Etiam auctor condimentum
-            volutpat. Mauris pharetra nibh fringilla ligula semper, eget pretium
-            leo dapibus. Suspendisse ultrices placerat sem, vitae vehicula orci
-            pharetra a. Praesent congue varius ipsum nec maximus. Integer
-            accumsan sagittis tellus sit amet suscipit. Mauris nisi massa,
-            bibendum in velit eget, placerat auctor justo. Donec vitae fermentum
-            erat, facilisis suscipit magna.
-          </p>
-        </div>
+        <HPSection title={"Hakkımızda"} id={"hakkimizda"}>
+          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
+          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
+          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
+          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
+          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
+          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+        </HPSection>
+
+        <HPSection title={"Ekibimiz"} id={"ekibimiz"}>
+          <Team />
+          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
+          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
+          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
+          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
+          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
+          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+        </HPSection>
+
+        <HPSection title={"Çalışma Alanlarımız"} id={"calisma-alanlarimiz"}>
+          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
+          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
+          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
+          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
+          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
+          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+        </HPSection>
+        {/* <EnrollMailList /> */}
       </div>
     </div>
   );
