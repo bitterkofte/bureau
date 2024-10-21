@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "react-indiana-drag-scroll/dist/style.css";
 
 import B0 from "../assets/banners/0.png";
 import B1 from "../assets/banners/1.png";
@@ -12,6 +13,8 @@ import BulletHeader from "../components/Elements/BulletHeader";
 import useInView from "../hooks/useInView";
 import Team from "../components/Special/Team";
 import HPSection from "../components/Special/HPSection";
+import ScrollContainer from "react-indiana-drag-scroll";
+import { servicesList } from "../data/services";
 
 const HomePage = () => {
   const introRef = useInView();
@@ -78,6 +81,25 @@ const HomePage = () => {
           Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
           hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
           müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+        </HPSection>
+
+        <HPSection title={"Hizmetlerimiz"} id={"hizmetlerimiz"}>
+          <ScrollContainer className="py-5 flex select-none gap-8">
+            {servicesList.map((m) => (
+              <div
+                className="min-w-40 w-40 p-3 flex flex-col xjustify-center items-center rounded-md hover:drop-shadow-2xl hover:scale-105 bg-lp-brown-lightest transition-all"
+                key={m.name}
+              >
+                <div className="text-4xl p-7">{m.icon}</div>
+                <p className="text-center font-semibold">{m.name}</p>
+              </div>
+            ))}
+            {/* <p className="p-3 bg-sky-400 min-w-96">1</p>
+            <p className="p-3 bg-sky-400 min-w-96">2</p>
+            <p className="p-3 bg-sky-400 min-w-96">3</p>
+            <p className="p-3 bg-sky-400 min-w-96">4</p>
+            <p className="p-3 bg-sky-400 min-w-96">5</p> */}
+          </ScrollContainer>
         </HPSection>
         {/* <EnrollMailList /> */}
       </div>
