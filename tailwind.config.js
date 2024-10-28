@@ -11,7 +11,20 @@ export default {
         "tr-slate": "#38365f94",
         "tr-lp": "#77212c9d",
       },
+      dropShadow: {
+        shine: ["0px 0px 10px #ffffff92", "0px 0px 5px #ffffffd5"],
+        shiner: ["0px 0px 10px #ffffff", "0px 0px 5px #ffffff"],
+      },
       colors: {
+        "lp-brown-t": "#77212c99",
+        "lp-brown-tt": "#87122253",
+        "lp-brown-ttt": "#8e0d1e2f",
+        "lp-brown-d1": "#750010",
+        "lp-brown-d2": "#52000B",
+        "lp-brown-l1": "#B43242",
+        "lp-brown-l11": "#BF273A",
+        "lp-brown-l2": "#D35F6E",
+        "lp-brown-l22": "#E05264",
         // "lp-brown-light": "#7e363f",
         // "lp-brown-dark": "#602930",
         "lp-brown": "#77212c",
@@ -31,6 +44,20 @@ export default {
         "lp-green-lighter": "#00b1ad",
         "lp-green-dark": "#004040",
         "lp-green-darker": "#003131",
+      },
+      keyframes: {
+        slideUp: {
+          "0%": { transform: "translateY(40%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        slideUp: "slideUp 0.2s ease-out",
+        fadeOut: "fadeOut 0.2s ease-out",
       },
     },
   },

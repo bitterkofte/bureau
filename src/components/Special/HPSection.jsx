@@ -5,11 +5,11 @@ const HPSection = ({ children, title, id }) => {
   const introRef = useInView();
   return (
     <div>
-      <div className="border-[1px] mb-10"></div>
+      <div className="border-[1px] my-10"></div>
       <BulletHeader id={id}>{title}</BulletHeader>
-      <p ref={introRef} className="mb-16 text-intro">
+      <div ref={introRef} className="mt-4 mb-8 text-intro">
         {children}
-      </p>
+      </div>
     </div>
   );
 };

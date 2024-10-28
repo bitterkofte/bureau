@@ -1,50 +1,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "react-indiana-drag-scroll/dist/style.css";
-
-import B0 from "../assets/banners/0.png";
-import B1 from "../assets/banners/1.png";
-import B2 from "../assets/banners/2.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import BulletHeader from "../components/Elements/BulletHeader";
-import useInView from "../hooks/useInView";
+import { servicesList } from "../data/services";
 import Team from "../components/Special/Team";
 import HPSection from "../components/Special/HPSection";
-import ScrollContainer from "react-indiana-drag-scroll";
-import { servicesList } from "../data/services";
+import CenterPageContent from "../components/Layout/CenterPageContent";
+import HPSlider from "../components/Special/HPSlider";
 
 const HomePage = () => {
-  const introRef = useInView();
-  const introRef2 = useInView();
   return (
-    <div className="pt-20">
-      <Swiper
-        className="select-none"
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
-      >
-        <SwiperSlide>
-          <img src={B0} className="h-80" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={B1} className="h-80" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={B2} className="h-80" />
-        </SwiperSlide>
-      </Swiper>
-      <div className="px-10 lg:px-36 py-8">
+    <div className="">
+      <HPSlider />
+      <CenterPageContent>
         <HPSection title={"Avukat Kimdir?"} id={"avukat-kimdir"}>
           Avukatlar, hukuk sisteminde adaletin sağlanması için çalışan
           profesyonellerdir. Hukuki konularda müvekkillerine danışmanlık yapar,
@@ -64,14 +34,17 @@ const HomePage = () => {
           müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
         </HPSection>
 
-        <HPSection title={"Ekibimiz"} id={"ekibimiz"}>
+        <HPSection title={"Çalışma Arkadaşları"} id={"calisma-arkadaslari"}>
           <Team />
-          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
-          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
-          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
-          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
-          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
-          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+          Petek § Leblebici Hukuk ve Danışmanlık bünyesinde, her biri alanında
+          uzman stajyer avukatlar, katip elemanları, teknik ekip ve çözüm
+          ortakları bulunmaktadır. Ekibimiz, müvekkillerimize sunulan
+          hizmetlerin kalitesini artırmak ve hukuki süreçlerde maksimum
+          verimlilik sağlamak için titizlikle çalışmaktadır. Stajyer
+          avukatlarımız sürekli eğitim ve gelişim içindeyken, katip ve teknik
+          personelimiz işlerin sorunsuz yürütülmesini sağlamakta; çözüm
+          ortaklarımız ise uzmanlık gerektiren özel durumlarda destek ve
+          danışmanlık sunmaktadır.
         </HPSection>
 
         <HPSection title={"Çalışma Alanlarımız"} id={"calisma-alanlarimiz"}>
@@ -84,25 +57,43 @@ const HomePage = () => {
         </HPSection>
 
         <HPSection title={"Hizmetlerimiz"} id={"hizmetlerimiz"}>
-          <ScrollContainer className="py-5 flex select-none gap-8">
+          <Swiper
+            id="hizmetler"
+            style={{
+              "--swiper-pagination-color": "#008b88",
+              "--swiper-pagination-bullet-inactive-color": "#999999",
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              "--swiper-pagination-bullet-size": "14px",
+              "--swiper-pagination-bullet-horizontal-gap": "6px",
+            }}
+            slidesPerView={5}
+            spaceBetween={30}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            rewind={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="pb-20 pt-10 -mt-10 select-none"
+          >
             {servicesList.map((m) => (
-              <div
-                className="min-w-40 w-40 p-3 flex flex-col xjustify-center items-center rounded-md hover:drop-shadow-2xl hover:scale-105 bg-lp-brown-lightest transition-all"
+              <SwiperSlide
+                color="red"
+                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[1px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:bg-lp-brown-lighter transition-all"
                 key={m.name}
               >
-                <div className="text-4xl p-7">{m.icon}</div>
+                <div className="text-5xl p-7">{m.icon}</div>
                 <p className="text-center font-semibold">{m.name}</p>
-              </div>
+              </SwiperSlide>
             ))}
-            {/* <p className="p-3 bg-sky-400 min-w-96">1</p>
-            <p className="p-3 bg-sky-400 min-w-96">2</p>
-            <p className="p-3 bg-sky-400 min-w-96">3</p>
-            <p className="p-3 bg-sky-400 min-w-96">4</p>
-            <p className="p-3 bg-sky-400 min-w-96">5</p> */}
-          </ScrollContainer>
+          </Swiper>
         </HPSection>
         {/* <EnrollMailList /> */}
-      </div>
+      </CenterPageContent>
     </div>
   );
 };

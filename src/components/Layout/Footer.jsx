@@ -21,8 +21,8 @@ const Footer = () => {
             src={Logo1}
             alt="logo"
           />
-          <p className="text-justify">
-            Lorem, ipsum dolor sit amet consectetur adipisicing
+          <p className="text-center font-bold tracking-wider">
+            PETEK & LEBLEBİCİ HUKUK ve DANIŞMANLIK
           </p>
           <div className="flex justify-between items-center">
             <a
@@ -92,16 +92,18 @@ const Footer = () => {
           <div className="max-w-56 flex flex-col gap-2">
             <h3 className="text-xl font-bold">İletişim Bilgilerimiz</h3>
             <Link>
-              <a href="https://g.co/kgs/TK1v2hR">
+              <a href="https://maps.app.goo.gl/FtXCg8qBD8bpc5NE6">
                 Eğitim Mahallesi Ahsen Çıkmazı Sokak Sadıkoğlu İş Merkezi 1
                 No:10 Kat:1 Daire:21 Kadıköy/İST
               </a>
             </Link>
             <Link>
-              <a href="#ekibimiz">+90 216 111 11 11</a>
+              <a href="#ekibimiz">+90 507 264 40 80</a>
             </Link>
             <Link>
-              <a href="#ekibimiz">bureau@gmail.com</a>
+              <a href="mailto:av.emreleblebici@gmail.com">
+                av.emreleblebici@gmail.com
+              </a>
             </Link>
           </div>
         </div>

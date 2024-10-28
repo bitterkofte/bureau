@@ -1,6 +1,6 @@
 const Link = ({ children }) => {
   return (
-    <div className=" hover:cursor-pointer hover:text-lp-brown-lightest dark:hover:text-lp-brown-lightest transition-all">
+    <div className=" hover:cursor-pointer hover:text-lp-brown-l1 dark:hover:text-lp-brown-lightest transition-all">
       {children}
     </div>
   );

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+   <pattern id="p" width="100" height="100" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#808" stroke-width="15">
+      <path stroke="red" d="M 344.069 344.069 L 0 500 L 155.931 155.931 L 500 0 L 344.069 344.069 Z M 62.765 438.882 L 311.968 313.457 L 186.543 188.032 L 62.765 438.882 Z"/>
+        <!-- <path d="M 344.069 344.069 L 0 500 L 155.931 155.931 L 500 0 L 344.069 344.069 Z"/>
+        <path d="M 62.765 438.882 L 311.968 313.457 L 186.543 188.032 L 62.765 438.882 Z"/> -->
+      </g>
+   </pattern>
+   <rect fill="url(#p)" width="100%" height="100%"/>
+</svg>

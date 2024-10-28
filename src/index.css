@@ -10,6 +10,12 @@
 * {
   scroll-behavior: smooth;
 }
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
 
 /* PIN SLIDER STYLE */
 .swiper {
@@ -178,4 +184,15 @@
 }
 .material-symbols-outlined {
   vertical-align: middle;
+}
+
+footer {
+  /* background-image: url("/src/assets/compass.svg");
+  background-repeat: repeat;
+  background-size: 10px;
+  background-repeat: 40px;
+  background-position: 40px;
+  background-position-x: left; */
+  /* background-image: url("/src/assets/footer-bg.svg"); */
+  /* background-repeat: repeat; */
 }
