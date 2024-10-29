@@ -9,6 +9,7 @@ import Team from "../components/Special/Team";
 import HPSection from "../components/Special/HPSection";
 import CenterPageContent from "../components/Layout/CenterPageContent";
 import HPSlider from "../components/Special/HPSlider";
+import SectionSeperator from "../components/Elements/SectionSeperator";
 
 const HomePage = () => {
   return (
@@ -25,6 +26,8 @@ const HomePage = () => {
           üstlenirler.
         </HPSection>
 
+        <SectionSeperator />
+
         <HPSection title={"Hakkımızda"} id={"hakkimizda"}>
           Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
           kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
@@ -33,6 +36,8 @@ const HomePage = () => {
           hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
           müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
         </HPSection>
+
+        <SectionSeperator />
 
         <HPSection title={"Çalışma Arkadaşları"} id={"calisma-arkadaslari"}>
           <Team />
@@ -47,6 +52,8 @@ const HomePage = () => {
           danışmanlık sunmaktadır.
         </HPSection>
 
+        <SectionSeperator />
+
         <HPSection title={"Çalışma Alanlarımız"} id={"calisma-alanlarimiz"}>
           Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
           kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
@@ -55,6 +62,8 @@ const HomePage = () => {
           hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
           müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
         </HPSection>
+
+        <SectionSeperator />
 
         <HPSection title={"Hizmetlerimiz"} id={"hizmetlerimiz"}>
           <Swiper
@@ -83,7 +92,7 @@ const HomePage = () => {
             {servicesList.map((m) => (
               <SwiperSlide
                 color="red"
-                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[1px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:bg-lp-brown-lighter transition-all"
+                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[1px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>

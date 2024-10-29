@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 import Hakkimizda from "./pages/Kurumsal/Hakkimizda.jsx";
+import NedenPetekLeblebici from "./pages/Kurumsal/NedenPetekLeblebici.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/hakkimizda",
         element: <Hakkimizda />,
+      },
+      {
+        path: "/neden-petek-ve-leblebici",
+        element: <NedenPetekLeblebici />,
       },
     ],
   },

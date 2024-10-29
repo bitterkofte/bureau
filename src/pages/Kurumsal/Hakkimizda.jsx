@@ -2,12 +2,16 @@ import BulletHeader from "../../components/Elements/BulletHeader";
 import SlidingParagraph from "../../components/Elements/SlidingParagraph";
 import CenterPageContent from "../../components/Layout/CenterPageContent";
 import PageBanner from "../../components/Special/PageBanner";
+import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
+import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
 
 const Hakkimizda = () => {
   return (
     <div>
       <PageBanner
         heading={"Hakkımızda"}
+        highImg={highImg}
+        lowImg={lowImg}
         navigation={["Anasayfa", "Kurumsal", "Hakkımızda"]}
       />
       <CenterPageContent>

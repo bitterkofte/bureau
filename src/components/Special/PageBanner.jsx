@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
+import useLazyLoader from "../../hooks/useLazyLoader";
 
-const PageBanner = ({ heading, navigation }) => {
+const PageBanner = ({ heading, navigation, lowImg, highImg }) => {
+  const isLoaded = useLazyLoader({ highImg });
+
   return (
-    <div className="relative bg-[url('/src/assets/bookshelves.jpg')] bg-cover bg-center h-96 select-none">
+    // <div
+    //   className={`relative bg-cover bg-center h-96 select-none transition-[background] duration-500 ease-in-out ${
+    //     isLoaded ? `bg-[${highImg}]` : `bg-[${lowImg}]`
+    //   }`}
+    // >
+    <div
+      className={`relative bg-cover bg-center h-96 select-none transition-[background] duration-500 ease-in-out ${
+        isLoaded
+          ? "bg-[url('/src/assets/lazyLoad/bookshelves-high.jpg')]"
+          : "bg-[url('/src/assets/lazyLoad/bookshelves-low.jpg')]"
+      }`}
+    >
       <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-center items-center gap-10 bg-lp-brown-t">
         <h1 className="text-neutral-50 text-5xl font-bold tracking-widest drop-shadow-md">
           {heading}
