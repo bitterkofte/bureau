@@ -9,17 +9,17 @@ export const navLinks = {
       URL: "/neden-petek-ve-leblebici",
     },
   ],
-  hizmetler: [
+  hukuk: [
     {
-      title: "Hakkımızda",
-      URL: "/hakkimizda",
+      title: "Sigorta Hukuku",
+      URL: "/sigorta-hukuku",
     },
     {
-      title: "Neden Petek & Leblebici",
-      URL: "/neden-petek-ve-leblebici",
+      title: "Hukuki Danışmanlık",
+      URL: "/hukuki-danismanlik",
     },
   ],
-  hukuk: [
+  hizmetler: [
     {
       title: "Hakkımızda",
       URL: "/hakkimizda",

@@ -76,7 +76,7 @@ const HomePage = () => {
               "--swiper-pagination-bullet-horizontal-gap": "6px",
             }}
             slidesPerView={5}
-            spaceBetween={30}
+            spaceBetween={49}
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
@@ -87,12 +87,12 @@ const HomePage = () => {
               clickable: true,
             }}
             modules={[Pagination, Autoplay]}
-            className="pb-20 pt-10 -mt-10 select-none"
+            className="pb-20 pt-10 -mt-10 px-12 select-none"
           >
             {servicesList.map((m) => (
               <SwiperSlide
                 color="red"
-                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[1px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
+                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[2px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>
