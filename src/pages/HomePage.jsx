@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCards } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -87,12 +87,30 @@ const HomePage = () => {
               clickable: true,
             }}
             modules={[Pagination, Autoplay]}
-            className="pb-20 pt-10 -mt-10 px-12 select-none"
+            className="pb-20 pt-10 -mt-10 px-12 select-none hidden lg:block"
           >
             {servicesList.map((m) => (
               <SwiperSlide
                 color="red"
                 className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[2px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
+                key={m.name}
+              >
+                <div className="text-5xl p-7">{m.icon}</div>
+                <p className="text-center font-semibold">{m.name}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* SECTION MOBILE */}
+          <Swiper
+            effect={"cards"}
+            grabCursor={true}
+            // loop={true}
+            modules={[EffectCards]}
+            className="mobile-sc lg:hidden"
+          >
+            {servicesList.map((m) => (
+              <SwiperSlide
+                className="?min-w-40 ?w-40 ?h-60 p-3 flex flex-col justify-center items-center rounded-xl border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter"
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>

@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const Team = () => {
   return (
-    <div className="team flex gap-5 mb-5 selection:bg-transparent">
+    <div className="team flex flex-wrap gap-5 mb-5 selection:bg-transparent">
       {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link

@@ -11,7 +11,7 @@ const Footer = () => {
     // formal: bg-slate-400 dark:bg-slate-700
     <footer className="w-full bg-lp-brown dark:bg-lp-brown-darker text-slate-200">
       <div
-        className="px-16 py-10 lg:px-48 lg:py-20 flex flex-col lg:flex-row gap-10 lg:gap-24 text-intro"
+        className="px-16 py-10 lg:px-48 lg:py-20 flex flex-col items-center lg:flex-row lg:items-start gap-10 lg:gap-24 text-intro"
         ref={introRef}
       >
         {/* PIN 1st GRP */}
