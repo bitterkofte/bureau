@@ -29,8 +29,8 @@ const NavbarLink = ({ href, links, text, popup }) => {
         to={href}
         onClick={(event) => popup && event.preventDefault()}
         className={`flex gap-1 items-center hover:cursor-pointer ${
-          selectedPopup ? "text-lp-brown-l1 dark:text-lp-brown-lightest" : ""
-        } hover:text-lp-brown-l1 dark:hover:text-lp-brown-lightest transition-all`}
+          isAnimating ? "text-lp-brown-l1 dark:text-lp-brown-lightest" : ""
+        } transition-all`}
       >
         {text}
         {popup && <FaAngleDown />}

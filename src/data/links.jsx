@@ -21,12 +21,16 @@ export const navLinks = {
   ],
   hizmetler: [
     {
-      title: "Hakkımızda",
-      URL: "/hakkimizda",
+      title: "Önleyici Hukuk Hizmetleri",
+      URL: "/onleyici-hukuk-hizmetleri",
     },
     {
-      title: "Neden Petek & Leblebici",
-      URL: "/neden-petek-ve-leblebici",
+      title: "Uzlaştırma ve Arabuluculuk Hizmetleri",
+      URL: "/uzlastirma-ve-arabuluculuk-hizmetleri",
+    },
+    {
+      title: "KVKK ve GDPR Hukuki Danışmanlık",
+      URL: "/kvkk-ve-gdpr-hukuki-danismanlik",
     },
   ],
 };

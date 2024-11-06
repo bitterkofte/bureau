@@ -11,6 +11,9 @@ import NedenPetekLeblebici from "./pages/Kurumsal/NedenPetekLeblebici.jsx";
 import SigortaHukuku from "./pages/Hukuk/SigortaHukuku.jsx";
 import HukukiDanismanlik from "./pages/Hukuk/HukukiDanismanlik.jsx";
 import Iletisim from "./pages/Iletisim.jsx";
+import Onleyici from "./pages/Hizmetler/Onleyici.jsx";
+import Uzlastirma from "./pages/Hizmetler/Uzlastirma.jsx";
+import KVKK from "./pages/Hizmetler/KVKK.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
       {
         path: "/iletisim",
         element: <Iletisim />,
+      },
+      {
+        path: "/onleyici-hukuk-hizmetleri",
+        element: <Onleyici />,
+      },
+      {
+        path: "/uzlastirma-ve-arabuluculuk-hizmetleri",
+        element: <Uzlastirma />,
+      },
+      {
+        path: "/kvkk-ve-gdpr-hukuki-danismanlik",
+        element: <KVKK />,
       },
     ],
   },

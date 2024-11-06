@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const PopupDrawer = ({ links, isAnimating }) => {
   return (
     <div
-      className={`min-w-40 px-3 py-3 absolute top-10 left-0 flex flex-col gap-2 bg-neutral-200 z-[100] rounded-md ${
+      className={`min-w-48 px-3 py-3 absolute top-10 left-0 flex flex-col gap-2 backdrop-blur bg-white/80 rounded-md ${
         isAnimating ? "animate-slideUp" : "animate-fadeOut"
       }`}
     >

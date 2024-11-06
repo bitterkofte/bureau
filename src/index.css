@@ -108,7 +108,7 @@ img {
 }
 .design-1 p {
   position: absolute;
-  z-index: 50;
+  z-index: 10;
   color: white;
   text-shadow: 2px 2px 15px rgb(49, 49, 49);
   font-weight: bolder;
@@ -253,4 +253,12 @@ footer {
 
 .mobile-sc .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
+}
+
+/* .drawerx {
+  backdrop-filter: blur(10px);
+} */
+
+.leaflet-control-attribution {
+  display: none;
 }

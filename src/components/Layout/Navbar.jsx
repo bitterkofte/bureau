@@ -4,7 +4,6 @@ import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import Logo from "../../assets/logo1.svg";
-import PopupDrawer from "../Special/PopupDrawer";
 import { navLinks } from "../../data/links";
 import NavbarLink from "../Special/NavbarLink";
 
