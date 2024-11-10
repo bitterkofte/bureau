@@ -17,11 +17,11 @@ const PageBanner = ({ heading, navigation, lowImg, highImg }) => {
           : "bg-[url('/src/assets/lazyLoad/bookshelves-low.jpg')]"
       }`}
     >
-      <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-center items-center gap-10 bg-lp-brown-t">
+      <div className="w-full h-full px-5 lg:p-0 absolute top-0 left-0 flex flex-col justify-center items-center gap-10 text-center bg-lp-brown-t">
         <h1 className="text-neutral-50 text-5xl font-bold tracking-widest drop-shadow-md">
           {heading}
         </h1>
-        <div className="px-4 py-3 flex rounded-xl text-sm font-light bg-neutral-100 dark:text-lp-brown drop-shadow-md">
+        <div className="px-4 py-3 flex rounded-xl text-xs lg:text-sm font-light bg-neutral-100 dark:text-lp-brown drop-shadow-md">
           {navigation.map((m, i) => (
             // <Link to={m.to} key={m.name}>
             //   {m.name}

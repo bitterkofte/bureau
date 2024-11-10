@@ -6,6 +6,7 @@ import { FiMenu } from "react-icons/fi";
 import Logo from "../../assets/logo1.svg";
 import { navLinks } from "../../data/links";
 import NavbarLink from "../Special/NavbarLink";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -13,6 +14,7 @@ const Navbar = () => {
   );
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -39,6 +41,11 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (isMobileMenuVisible) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }, [isMobileMenuVisible]);
+
   return (
     <nav
       // className={`active ${!show && "hidden"}`}
@@ -49,43 +56,40 @@ const Navbar = () => {
       <div className="flex items-center gap-5">
         <Link to={"/"}>
           <img
-            className="w-14 h-14 p-1 select-none drop-shadow-shine hover:drop-shadow-shiner transition-all"
+            className="relative z-20 w-14 h-14 p-1 select-none drop-shadow-shine hover:drop-shadow-shiner transition-all"
             src={Logo}
             alt="Logo"
           />
         </Link>
+        {/* SECTION DESKTOP */}
         <ul className="hidden lg:flex gap-11">
-          {/* <li>
-            <Link>Anasayfa</Link>
-          </li> */}
           <NavbarLink text={"Anasayfa"} href={"/"} />
           <NavbarLink text={"Kurumsal"} links={navLinks.kurumsal} popup />
           <NavbarLink text={"Hukuk"} links={navLinks.hukuk} popup />
           <NavbarLink text={"Hizmetler"} links={navLinks.hizmetler} popup />
           <NavbarLink text={"İletişim"} href={"/iletisim"} />
-          {/* <li>Ekibimiz</li>
-        <li>Çalışma Alanlarımız</li>
-        <li>Kariyer</li>
-        <li>Blog</li>
-        <li>İletişim</li>
-        <li>Online Danışmanlık</li> */}
         </ul>
       </div>
-      <button className="lg:hidden text-3xl">
-        <FiMenu />
+      {/* SECTION MOBILE */}
+      <button className="relative z-20 lg:hidden text-3xl">
+        <FiMenu
+          onClick={() => setIsMobileMenuVisible((s) => !s)}
+          className={`${isMobileMenuVisible ? "text-white" : ""}`}
+        />
       </button>
       <div>
         <button
           onClick={toggleTheme}
-          className="p-2 text-xl rounded-lg dark:bg-amber-500 bg-slate-500"
+          className="relative z-20 p-2 text-xl rounded-lg dark:bg-lp-brown-l2 bg-lp-brown-d1 transition-all"
         >
           {theme === "light" ? (
             <FaMoon className="text-slate-200" />
           ) : (
-            <MdSunny className="text-amber-200" />
+            <MdSunny className="text-white" />
           )}
         </button>
       </div>
+      {isMobileMenuVisible && <MobileMenu />}
     </nav>
   );
 };
