@@ -47,14 +47,13 @@ img {
 }
 .navbar-bg {
   backdrop-filter: blur(8px);
-  /* background-color: rgba(132, 135, 188, 0.636); */
   background-color: #77212c9d;
   background-color: #7939419d;
   background-color: #7b50569d;
   background-color: #ffffffa4;
 }
 
-/* PIN HOME PAGE TEXT ANIMATION */
+/* PIN SLIDING PARAGRAPH ANIMATION */
 .text-intro {
   opacity: 0;
   transform: translateY(30px);
@@ -200,7 +199,7 @@ footer {
 .mobile-sc.swiper {
   width: 100%;
   height: 320px;
-  padding: 20px 80px;
+  padding: 20px 60px;
 }
 .mobile-sc .swiper-slide {
   /* max-width: 200px; */
@@ -215,7 +214,7 @@ footer {
   overflow: hidden;
 }
 
-.mobile-sc .swiper-slide:nth-child(1n) {
+/* .mobile-sc .swiper-slide:nth-child(1n) {
   background-color: rgb(206, 17, 17);
 }
 
@@ -253,7 +252,7 @@ footer {
 
 .mobile-sc .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
-}
+} */
 
 /* .drawerx {
   backdrop-filter: blur(10px);

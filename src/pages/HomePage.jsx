@@ -87,12 +87,12 @@ const HomePage = () => {
               clickable: true,
             }}
             modules={[Pagination, Autoplay]}
-            className="pb-20 pt-10 -mt-10 px-12 select-none hidden lg:block"
+            className="!pb-20 !pt-10 !-mt-10 !px-12 select-none !hidden lg:!block "
           >
             {servicesList.map((m) => (
               <SwiperSlide
                 color="red"
-                className="min-w-40 w-40 h-60 p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[2px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
+                className="!h-60 !p-3 flex flex-col justify-center items-center rounded-xl hover:drop-shadow-2xl hover:border-[3px] hover:scale-105 border-[2px] hover:cursor-grab active:cursor-grabbing border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter transition-all"
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>
@@ -106,11 +106,23 @@ const HomePage = () => {
             grabCursor={true}
             // loop={true}
             modules={[EffectCards]}
-            className="mobile-sc lg:hidden"
+            className="!relative !overflow-visible mobile-sc lg:!hidden"
           >
             {servicesList.map((m) => (
               <SwiperSlide
-                className="?min-w-40 ?w-40 ?h-60 p-3 flex flex-col justify-center items-center rounded-xl border-lp-brown dark:border-neutral-200 dark:bg-lp-brown-lighter"
+                className={
+                  "!min-w-32 p-3 flex flex-col justify-center items-center rounded-xl " +
+                  "odd:!bg-lp-brown " +
+                  "even:!bg-lp-green " +
+                  "[&:nth-child(1n)]:!bg-lp-brown " +
+                  "[&:nth-child(2n)]:!bg-lp-green " +
+                  "[&:nth-child(3n)]:!bg-lp-brown-d1 " +
+                  "[&:nth-child(4n)]:!bg-lp-green-dark " +
+                  "[&:nth-child(5n)]:!bg-lp-brown " +
+                  "[&:nth-child(6n)]:!bg-lp-green " +
+                  "[&:nth-child(7n)]:!bg-lp-brown-d1 " +
+                  "[&:nth-child(8n)]:!bg-lp-green-dark "
+                }
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>

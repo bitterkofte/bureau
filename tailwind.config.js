@@ -25,6 +25,8 @@ export default {
         "lp-brown-l11": "#BF273A",
         "lp-brown-l2": "#D35F6E",
         "lp-brown-l22": "#E05264",
+        "lp-brown-l3": "#e37c89",
+        "lp-brown-l33": "#f06e80",
         // "lp-brown-light": "#7e363f",
         // "lp-brown-dark": "#602930",
         "lp-brown": "#77212c",

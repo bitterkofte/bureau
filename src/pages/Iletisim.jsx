@@ -3,6 +3,9 @@ import highImg from "../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../assets/lazyLoad/bookshelves-low.jpg";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
 
 const position = [40.992444877573284, 29.04113002642259];
 
@@ -14,14 +17,38 @@ const Iletisim = () => {
       lowImg={lowImg}
       navigation={["Anasayfa", "İletişim"]}
     >
-      <p>
-        Açık Adres: Eğitim Mahallesi Ahsen Çıkmazı Sokak Sadıkoğlu İş Merkezi 1
-        No:10 Kat:1 Daire:21 Kadıköy/İST
+      <h3 className="flex gap-2 items-center font-bold text-lg tracking-wider">
+        <FaLocationDot />
+        Açık Adres
+      </h3>
+      <p className="mb-4">
+        Eğitim Mahallesi Ahsen Çıkmazı Sokak Sadıkoğlu İş Merkezi 1 No:10 Kat:1
+        Daire:21 Kadıköy/İST
       </p>
-      <p>Telefon Numarası: +90 507 264 40 80</p>
-      <p>E-posta adresi: av.emreleblebici@gmail.com</p>
-      {/* <div className="overflow-hidden w-full h-96"> */}
-      <MapContainer
+      <h3 className="flex gap-2 items-center font-bold text-lg tracking-wider">
+        <FaPhoneAlt />
+        Telefon Numarası
+      </h3>
+      <p className="mb-4">+90 507 264 40 80</p>
+      <h3 className="flex gap-2 items-center font-bold text-lg tracking-wider">
+        <IoIosMail />
+        E-posta Adresi
+      </h3>
+      <p className="mb-8">av.emreleblebici@gmail.com</p>
+
+      <p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12045.99651387941!2d29.0411272!3d40.9924473!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9954a4f319d%3A0xc66f072ff21fa87a!2zU2FkxLFrb8SfbHUgxLDFnyBNZXJrZXppIDE!5e0!3m2!1str!2str!4v1731182607454!5m2!1str!2str"
+          className="w-full h-96 rounded-xl"
+          // width="600"
+          // height="450"
+          // style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </p>
+      {/* <MapContainer
         className="h-96 rounded-md mt-10"
         // style={{ height: "450px", width: "100%" }}
         center={position}
@@ -49,8 +76,7 @@ const Iletisim = () => {
             </p>
           </Popup>
         </Marker>
-      </MapContainer>
-      {/* </div> */}
+      </MapContainer> */}
     </PageLayout>
   );
 };
