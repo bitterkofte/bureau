@@ -7,6 +7,7 @@ import Logo from "../../assets/logo1.svg";
 import { navLinks } from "../../data/links";
 import NavbarLink from "../Special/NavbarLink";
 import MobileMenu from "./MobileMenu";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -15,6 +16,14 @@ const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+  const { pathname } = useLocation();
+  // const [url, setUrl] = useState(pathname);
+
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    // if (url !== pathname) window.scrollTo(0, 0);
+    setIsMobileMenuVisible(false);
+  }, [pathname]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -72,10 +81,38 @@ const Navbar = () => {
       </div>
       {/* SECTION MOBILE */}
       <button className="relative z-20 lg:hidden text-3xl">
-        <FiMenu
+        {/* <FiMenu
           onClick={() => setIsMobileMenuVisible((s) => !s)}
           className={`${isMobileMenuVisible ? "text-white" : ""}`}
-        />
+        /> */}
+        <div className="scale-[0.6]">
+          <div
+            id="hamburger-menu"
+            className={`${isMobileMenuVisible ? "open" : ""}`}
+            onClick={() => setIsMobileMenuVisible((s) => !s)}
+          >
+            <span
+              className={`${
+                isMobileMenuVisible ? "bg-white" : "bg-lp-brown dark:bg-white"
+              }`}
+            ></span>
+            <span
+              className={`${
+                isMobileMenuVisible ? "bg-white" : "bg-lp-brown dark:bg-white"
+              }`}
+            ></span>
+            <span
+              className={`${
+                isMobileMenuVisible ? "bg-white" : "bg-lp-brown dark:bg-white"
+              }`}
+            ></span>
+            <span
+              className={`${
+                isMobileMenuVisible ? "bg-white" : "bg-lp-brown dark:bg-white"
+              }`}
+            ></span>
+          </div>
+        </div>
       </button>
       <div>
         <button

@@ -5,14 +5,14 @@ import ToTheTop from "./ToTheTop";
 import { useEffect, useState } from "react";
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "light"
-  );
+  const [theme] = useState(() => localStorage.getItem("theme") || "light");
   const { pathname } = useLocation();
+  const [url, setUrl] = useState(pathname);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // window.scrollTo(0, 0);
+    if (url !== pathname) window.scrollTo(0, 0);
+  }, [pathname, url]);
 
   useEffect(() => {
     if (theme === "dark") document.documentElement.classList.add("dark");

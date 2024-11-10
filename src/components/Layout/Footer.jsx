@@ -9,7 +9,7 @@ const Footer = () => {
   const introRef = useInView();
   return (
     // formal: bg-slate-400 dark:bg-slate-700
-    <footer className="w-full bg-lp-brown dark:bg-lp-brown-darker text-slate-200">
+    <footer className="w-full bg-lp-brown dark:bg-lp-brown-darker bg-[url('/src/assets/backgrounds/lp-bureau-bg-m.svg')] lg:bg-[url('/src/assets/backgrounds/lp-bureau-bg-5.svg')] bg-cover  text-slate-200">
       <div
         className="px-16 lg:px-24 py-10 flex flex-col items-center lg:flex-row lg:items-start gap-10 xl:gap-24 text-intro"
         ref={introRef}
@@ -112,7 +112,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-[1px]" />
+      <div className="h-[1.5px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
       <div className="p-4 flex justify-center items-center">
         <p>&#169; 2024 Tüm Haklarımız Saklıdır.</p>
       </div>
