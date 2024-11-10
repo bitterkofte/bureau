@@ -80,7 +80,7 @@ const Navbar = () => {
       <div>
         <button
           onClick={toggleTheme}
-          className="relative z-20 p-2 text-xl rounded-lg dark:bg-lp-brown-l2 bg-lp-brown-d1 transition-all"
+          className="relative z-20 p-2 text-xl rounded-xl shadow-lg dark:bg-lp-brown-l2 bg-lp-brown-d1 transition-all"
         >
           {theme === "light" ? (
             <FaMoon className="text-slate-200" />
