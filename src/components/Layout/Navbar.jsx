@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Link from "../Elements/Link";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
-import { FiMenu } from "react-icons/fi";
 import Logo from "../../assets/logo1.svg";
 import { navLinks } from "../../data/links";
 import NavbarLink from "../Special/NavbarLink";
 import MobileMenu from "./MobileMenu";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { IoLanguage } from "react-icons/io5";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -17,7 +18,12 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
   const { pathname } = useLocation();
+  const { t, i18n } = useTranslation();
   // const [url, setUrl] = useState(pathname);
+
+  const languageChanger = async () => {
+    await i18n.changeLanguage(i18n.language === "tr" ? "en" : "tr");
+  };
 
   useEffect(() => {
     // window.scrollTo(0, 0);
@@ -72,11 +78,34 @@ const Navbar = () => {
         </Link>
         {/* SECTION DESKTOP */}
         <ul className="hidden lg:flex gap-11">
-          <NavbarLink text={"Anasayfa"} href={"/"} />
-          <NavbarLink text={"Kurumsal"} links={navLinks.kurumsal} popup />
-          <NavbarLink text={"Hukuk"} links={navLinks.hukuk} popup />
-          <NavbarLink text={"Hizmetler"} links={navLinks.hizmetler} popup />
-          <NavbarLink text={"İletişim"} href={"/iletisim"} />
+          <NavbarLink
+            text={t("navbar.anasayfa")}
+            href={"/"}
+            isNavbarVisible={show}
+          />
+          <NavbarLink
+            text={t("navbar.kurumsal")}
+            links={navLinks.kurumsal}
+            isNavbarVisible={show}
+            popup
+          />
+          <NavbarLink
+            text={t("navbar.hukuk")}
+            links={navLinks.hukuk}
+            isNavbarVisible={show}
+            popup
+          />
+          <NavbarLink
+            text={t("navbar.hizmetler")}
+            links={navLinks.hizmetler}
+            isNavbarVisible={show}
+            popup
+          />
+          <NavbarLink
+            text={t("navbar.iletisim")}
+            href={"/iletisim"}
+            isNavbarVisible={show}
+          />
         </ul>
       </div>
       {/* SECTION MOBILE */}
@@ -115,6 +144,12 @@ const Navbar = () => {
         </div>
       </button>
       <div>
+        <button
+          className="relative z-20 p-2 text-xl rounded-xl shadow-lg mr-3 bg-lp-green text-white active:scale-90"
+          onClick={languageChanger}
+        >
+          <IoLanguage />
+        </button>
         <button
           onClick={toggleTheme}
           className="relative z-20 p-2 text-xl rounded-xl shadow-lg dark:bg-lp-brown-l2 bg-lp-brown-d1 transition-all"

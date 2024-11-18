@@ -1,10 +1,9 @@
 import { useState } from "react";
 import PopupDrawer from "./PopupDrawer";
-import { IoIosArrowDown } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const NavbarLink = ({ href, links, text, popup }) => {
+const NavbarLink = ({ href, links, text, popup, isNavbarVisible }) => {
   const [selectedPopup, setSelectedPopup] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -14,6 +13,16 @@ const NavbarLink = ({ href, links, text, popup }) => {
   };
 
   const hideDrawer = () => {
+    // const glitchPreventer = setTimeout(() => {
+    //   if (!selectedPopup) {
+    //     setIsAnimating(false);
+    //     setTimeout(() => setSelectedPopup(false), 200);
+    //   } else {
+    //     setIsAnimating(true);
+    //     setSelectedPopup(true);
+    //     clearInterval(glitchPreventer);
+    //   }
+    // }, 200);
     setIsAnimating(false);
     setTimeout(() => setSelectedPopup(false), 200);
   };
@@ -35,12 +44,13 @@ const NavbarLink = ({ href, links, text, popup }) => {
         {text}
         {popup && <FaAngleDown />}
       </Link>
-      {popup && selectedPopup && (
+      {popup && selectedPopup && isNavbarVisible && (
         <PopupDrawer
           links={links}
           isAnimating={isAnimating}
-          onMouseEnter={showDrawer}
+          onMouseEnter={isAnimating && showDrawer}
           onMouseLeave={hideDrawer}
+          isNavbarVisible={isNavbarVisible}
         />
       )}
     </li>
