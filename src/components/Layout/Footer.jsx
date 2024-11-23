@@ -1,4 +1,3 @@
-import Link from "../Elements/Link";
 import Logo1 from "../../assets/logo3.svg";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -107,7 +106,7 @@ const Footer = () => {
               href="mailto:av.emreleblebici@gmail.com"
               className="text-neutral-300 hover:text-neutral-50 lg:text-xs xl:text-base"
             >
-              av.emreleblebici@gmail.com
+              info@petekleblebicihukuk.com
             </a>
           </div>
         </div>

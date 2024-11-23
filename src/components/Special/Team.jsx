@@ -1,21 +1,25 @@
 import emre from "../../assets/team/emre_leblebici.png";
 import beyza from "../../assets/team/beyza_petek.png";
 import { BiRightArrow } from "react-icons/bi";
-import { FaFacebook } from "react-icons/fa";
+import TeamCard from "./TeamCard";
 
 const Team = () => {
   return (
     <div className="team flex flex-wrap gap-5 mb-5 selection:bg-transparent">
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap"
-        rel="stylesheet"
+      <TeamCard
+        img={emre}
+        name={"Emre Leblebici"}
+        title={"Avukat"}
+        mail={"emre.leblebici@petekleblebicihukuk.com"}
+        phone={"+90 507 264 40 80"}
       />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-      /> */}
+      <TeamCard
+        img={beyza}
+        name={"Beyza Petek"}
+        title={"Avukat"}
+        mail={"beyza.petek@petekleblebicihukuk.com"}
+        phone={"+90 537 699 1757"}
+      />
       <div className="design-1">
         <figure>
           <img src={emre} alt="Emre Leblebici" />
