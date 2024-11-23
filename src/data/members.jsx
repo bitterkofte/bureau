@@ -1,14 +1,14 @@
 export const members = [
   {
     name: "Emre Leblebici",
-    img: "/public/team/emre_leblebici.png",
+    img: "/team/emre_leblebici.png",
     title: "Avukat",
     mail: "emre.leblebici@petekleblebicihukuk.com",
     phone: "+90 507 264 40 80",
   },
   {
     name: "Beyza Petek",
-    img: "/public/team/beyza_petek.png",
+    img: "/team/beyza_petek.png",
     title: "Avukat",
     mail: "beyza.petek@petekleblebicihukuk.com",
     phone: "+90 537 699 1757",
