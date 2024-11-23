@@ -280,13 +280,55 @@ img {
   overflow: hidden;
 }
 
-.avatar {
-  /* clip-path: circle(75%); */
+/* .avatar {
   clip-path: circle(85px at 50% 34%);
   transition: all ease-in-out 0.2s;
 }
 .avatar.focused {
-  /* clip-path: circle(85px at 50% 34%);
-  transition: all ease-in-out 0.2s; */
   clip-path: circle(75%);
+} */
+
+.avatar-img {
+  border-radius: 10%;
+  transition: border-radius ease-in-out 0.2s;
+}
+.avatar-img.focused {
+  border-radius: 100%;
+}
+
+.avatar-card {
+  .avatar-img {
+    border-radius: 0.75rem;
+    transition: border-radius ease-in-out 0.2s;
+  }
+}
+.avatar-card:hover {
+  .avatar-img {
+    border-radius: 100%;
+  }
+}
+
+.abc {
+  border-radius: 10%;
+  transition: border-radius ease-in-out 0.2s;
+}
+.abc:hover {
+  border-radius: 100%;
+}
+
+.team {
+  max-height: 450px;
+  transition: max-height 0.5s;
+}
+.team.expanded {
+  max-height: 2000px;
+}
+@media (max-width: 1024px) {
+  .team {
+    max-height: 900px;
+    transition: max-height 3.5s 0.5s;
+  }
+  .team.expanded {
+    max-height: 5000px;
+  }
 }

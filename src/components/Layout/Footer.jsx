@@ -26,25 +26,25 @@ const Footer = () => {
           <div className="flex justify-between items-center">
             <a
               href=""
-              className="p-3 bg-lp-brown-dark dark:bg-lp-brown rounded-lg hover:bg-lp-brown-darker dark:hover:bg-lp-brown-dark transition-[background-color] duration-300"
+              className="p-3 bg-lp-brown rounded-lg hover:bg-lp-brown-dark transition-[background-color] duration-300"
             >
               <FaFacebook />
             </a>
             <a
               href=""
-              className="p-3 bg-lp-brown-dark dark:bg-lp-brown rounded-lg hover:bg-lp-brown-darker dark:hover:bg-lp-brown-dark transition-[background-color] duration-300"
+              className="p-3 bg-lp-brown rounded-lg hover:bg-lp-brown-dark transition-[background-color] duration-300"
             >
               <FaInstagram />
             </a>
             <a
               href=""
-              className="p-3 bg-lp-brown-dark dark:bg-lp-brown rounded-lg hover:bg-lp-brown-darker dark:hover:bg-lp-brown-dark transition-[background-color] duration-300"
+              className="p-3 bg-lp-brown rounded-lg hover:bg-lp-brown-dark transition-[background-color] duration-300"
             >
               <FaXTwitter />
             </a>
             <a
               href=""
-              className="p-3 bg-lp-brown-dark dark:bg-lp-brown rounded-lg hover:bg-lp-brown-darker dark:hover:bg-lp-brown-dark transition-[background-color] duration-300"
+              className="p-3 bg-lp-brown rounded-lg hover:bg-lp-brown-dark transition-[background-color] duration-300"
             >
               <FaYoutube />
             </a>

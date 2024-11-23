@@ -65,7 +65,11 @@ const HomePage = () => {
 
         <SectionSeperator />
 
-        <HPSection title={"Hizmetlerimiz"} id={"hizmetlerimiz"}>
+        <HPSection
+          title={"Hizmetlerimiz"}
+          id={"hizmetlerimiz"}
+          className="overflow-hidden"
+        >
           <Swiper
             id="hizmetler"
             style={{
