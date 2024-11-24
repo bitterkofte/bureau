@@ -1,28 +1,23 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
 
 const Uzlastirma = () => {
+  const { t } = useTranslation();
+
   return (
     <PageLayout
-      heading={"Uzlaştırma ve Arabuluculuk Hizmetleri"}
+      heading={t("navbar.uzlastirmaAH")}
       highImg={highImg}
       lowImg={lowImg}
       navigation={[
-        "Anasayfa",
-        "Hizmetler",
-        "Uzlaştırma ve Arabuluculuk Hizmetleri",
+        t("navbar.anasayfa"),
+        t("navbar.hizmetler"),
+        t("navbar.uzlastirmaAH"),
       ]}
     >
-      Petek § Leblebici Hukuk ve Danışmanlık olarak, müvekkillerimize alternatif
-      çözüm yolları sunarak, uzun ve maliyetli yargı süreçlerinden kaçınmalarına
-      yardımcı oluyoruz. Deneyimli avukatlarımız, taraflar arasında uzlaşı
-      sağlamak ve ihtilafları etkin bir şekilde çözmek için arabuluculuk ve
-      uzlaştırma hizmetleri sunar. Uzmanlarımız, müvekkillerimize çatışmaların
-      çözümünde tarafsız ve etkili bir rol oynayarak, uzlaşma odaklı ve adil
-      sonuçlar elde etmelerini sağlar. Uzlaştırma ve arabuluculuk
-      hizmetlerimizle, müvekkillerimizin hem zaman hem de maliyet açısından
-      avantaj sağlamalarını hedefliyoruz.
+      {t("content.hizmetler.uzlastirmaAH")}
     </PageLayout>
   );
 };

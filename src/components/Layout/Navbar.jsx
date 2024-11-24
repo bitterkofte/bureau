@@ -9,6 +9,8 @@ import MobileMenu from "./MobileMenu";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { IoLanguage } from "react-icons/io5";
+import TurkishFlag from "../../assets/langs/turkish.png";
+import EnglishFlag from "../../assets/langs/english.png";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -145,14 +147,18 @@ const Navbar = () => {
       </button>
       <div>
         <button
-          className="relative z-20 p-2 text-xl rounded-xl shadow-lg mr-3 bg-lp-green text-white active:scale-90"
+          className="relative z-20 w-10 h-10 p-2 text-xl rounded-xl shadow-lg mr-3 bg-lp-green text-white active:scale-90"
           onClick={languageChanger}
         >
-          <IoLanguage />
+          {i18n.language === "en" ? (
+            <img className="w-fit" src={TurkishFlag} alt="TR" />
+          ) : (
+            <img className="w-fit" src={EnglishFlag} alt="EN" />
+          )}
         </button>
         <button
           onClick={toggleTheme}
-          className="relative z-20 p-2 text-xl rounded-xl shadow-lg dark:bg-lp-brown-l2 bg-lp-brown-d1 transition-all"
+          className="relative z-20 w-10 h-10 p-2 text-2xl rounded-xl shadow-lg dark:bg-lp-brown-l11 bg-lp-brown-d1 transition-all"
         >
           {theme === "light" ? (
             <FaMoon className="text-slate-200" />

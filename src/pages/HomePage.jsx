@@ -1,72 +1,41 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectCards } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
 import { servicesList } from "../data/services";
 import Team from "../components/Special/Team";
 import HPSection from "../components/Special/HPSection";
 import CenterPageContent from "../components/Layout/CenterPageContent";
 import HPSlider from "../components/Special/HPSlider";
 import SectionSeperator from "../components/Elements/SectionSeperator";
+import PageBanner from "../components/Special/PageBanner";
+import highImg from "../assets/lazyLoad/bookshelves-high.jpg";
+import lowImg from "../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="">
-      <HPSlider />
+      {/* <HPSlider /> */}
+      <PageBanner
+        heading={t("navbar.anasayfa")}
+        highImg={highImg}
+        lowImg={lowImg}
+        navigation={[t("navbar.anasayfa")]}
+      />
       <CenterPageContent>
-        <HPSection title={"Avukat Kimdir?"} id={"avukat-kimdir"}>
-          Avukatlar, hukuk sisteminde adaletin sağlanması için çalışan
-          profesyonellerdir. Hukuki konularda müvekkillerine danışmanlık yapar,
-          onları temsil eder ve hukuki süreçlerde haklarını savunurlar.
-          Avukatlar, çeşitli hukuk dallarında uzmanlaşarak, bireylerin ve
-          kurumların hukuki ihtiyaçlarına yönelik çözüm önerileri sunarlar.
-          Hukukun üstünlüğünü ve adaleti sağlamak adına önemli bir rol
-          üstlenirler.
-        </HPSection>
-
-        <SectionSeperator />
-
-        <HPSection title={"Hakkımızda"} id={"hakkimizda"}>
-          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
-          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
-          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
-          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
-          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
-          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
-        </HPSection>
-
-        <SectionSeperator />
-
-        <HPSection title={"Çalışma Arkadaşları"} id={"calisma-arkadaslari"}>
-          <Team />
-          Petek § Leblebici Hukuk ve Danışmanlık bünyesinde, her biri alanında
-          uzman stajyer avukatlar, katip elemanları, teknik ekip ve çözüm
-          ortakları bulunmaktadır. Ekibimiz, müvekkillerimize sunulan
-          hizmetlerin kalitesini artırmak ve hukuki süreçlerde maksimum
-          verimlilik sağlamak için titizlikle çalışmaktadır. Stajyer
-          avukatlarımız sürekli eğitim ve gelişim içindeyken, katip ve teknik
-          personelimiz işlerin sorunsuz yürütülmesini sağlamakta; çözüm
-          ortaklarımız ise uzmanlık gerektiren özel durumlarda destek ve
-          danışmanlık sunmaktadır.
-        </HPSection>
-
-        <SectionSeperator />
-
-        <HPSection title={"Çalışma Alanlarımız"} id={"calisma-alanlarimiz"}>
-          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
-          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
-          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
-          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
-          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
-          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
+        <HPSection title={t("navbar.hakkimizda")} id={"hakkimizda"}>
+          {t("content.kurumsal.hakkimizda")}
         </HPSection>
 
         <SectionSeperator />
 
         <HPSection
-          title={"Hizmetlerimiz"}
+          title={t("navbar.hizmetlerimiz")}
           id={"hizmetlerimiz"}
           className="overflow-hidden"
         >
@@ -100,7 +69,9 @@ const HomePage = () => {
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>
-                <p className="text-center font-semibold">{m.name}</p>
+                <p className="text-center font-semibold">
+                  {i18n.language === "tr" ? m.name : m.nameEn}
+                </p>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -130,11 +101,29 @@ const HomePage = () => {
                 key={m.name}
               >
                 <div className="text-5xl p-7">{m.icon}</div>
-                <p className="text-center font-semibold">{m.name}</p>
+                <p className="text-center font-semibold">
+                  {i18n.language === "tr" ? m.name : m.nameEn}
+                </p>
               </SwiperSlide>
             ))}
           </Swiper>
         </HPSection>
+
+        <SectionSeperator />
+
+        <HPSection title={t("navbar.avukatK")} id={"avukat-kimdir"}>
+          {t("content.anasayfa.avukatK")}
+        </HPSection>
+
+        <SectionSeperator />
+
+        <HPSection title={t("navbar.calismaA")} id={"calisma-arkadaslari"}>
+          <Team />
+          {t("content.anasayfa.calismaA")}
+        </HPSection>
+
+        {/* <SectionSeperator /> */}
+
         {/* <EnrollMailList /> */}
       </CenterPageContent>
     </div>

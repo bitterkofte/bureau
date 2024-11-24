@@ -4,28 +4,24 @@ import CenterPageContent from "../../components/Layout/CenterPageContent";
 import PageBanner from "../../components/Special/PageBanner";
 import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
+import PageLayout from "../../components/Layout/PageLayout";
 
 const Hakkimizda = () => {
+  const { t } = useTranslation();
   return (
-    <div>
-      <PageBanner
-        heading={"Hakkımızda"}
-        highImg={highImg}
-        lowImg={lowImg}
-        navigation={["Anasayfa", "Kurumsal", "Hakkımızda"]}
-      />
-      <CenterPageContent>
-        <SlidingParagraph>
-          <BulletHeader id={""}>Hakkımızda</BulletHeader>
-          Petek § Leblebici Hukuk ve Danışmanlık, 2023 yılında İstanbul’da
-          kurulmuş olup, dinamik ve gelişen ekibimizle müvekkillerimize kapsamlı
-          ve nitelikli hukuki danışmanlık ve avukatlık hizmetleri sunmaktayız.
-          Ofisimiz, hukukun her alanında en iyi hizmeti sunabilmek adına güncel
-          hukuki gelişmeleri ve değişen mevzuatı yakından takip ederken,
-          müvekkillerimize hızlı ve etkili çözümler sunma amacı taşımaktadır.
-        </SlidingParagraph>
-      </CenterPageContent>
-    </div>
+    <PageLayout
+      heading={t("navbar.hakkimizda")}
+      highImg={highImg}
+      lowImg={lowImg}
+      navigation={[
+        t("navbar.anasayfa"),
+        t("navbar.kurumsal"),
+        t("navbar.hakkimizda"),
+      ]}
+    >
+      {t("content.kurumsal.hakkimizda")}
+    </PageLayout>
   );
 };
 export default Hakkimizda;

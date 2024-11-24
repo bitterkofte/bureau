@@ -3,14 +3,17 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import useInView from "../../hooks/useInView";
 import MyLink from "../Elements/MyLink";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const introRef = useInView();
+  const { t } = useTranslation();
+
   return (
     // formal: bg-slate-400 dark:bg-slate-700
-    <footer className="w-full bg-lp-brown dark:bg-lp-brown-darker bg-[url('/src/assets/backgrounds/lp-bureau-bg-m.svg')] lg:bg-[url('/src/assets/backgrounds/lp-bureau-bg-5.svg')] bg-cover  text-slate-200">
+    <footer className="w-full bg-lp-brown dark:bg-lp-brown-darker bg-[url('/src/assets/backgrounds/lp-bureau-bg-m.svg')] lg:bg-[url('/src/assets/backgrounds/lp-bureau-bg-5.svg')] bg-cover text-slate-200">
       <div
-        className="px-16 lg:px-24 py-10 flex flex-col items-center lg:flex-row lg:items-start gap-10 xl:gap-24 text-intro"
+        className="px-16 lg:px-24 py-16 flex flex-col items-center lg:flex-row lg:items-start gap-10 xl:gap-24 text-intro"
         ref={introRef}
       >
         {/* PIN 1st GRP */}
@@ -21,7 +24,7 @@ const Footer = () => {
             alt="logo"
           />
           <p className="text-center font-bold tracking-wider">
-            PETEK & LEBLEBİCİ HUKUK ve DANIŞMANLIK
+            {t("buro").toUpperCase()}
           </p>
           <div className="flex justify-between items-center">
             <a
@@ -55,39 +58,39 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between grow gap-10 lg:gap-16">
           {/* SECTION 2nd Col */}
           <div className="max-w-48 flex flex-col gap-2 lg:gap-4 2xl:gap-2">
-            <h3 className="text-xl font-bold">Kurumsal</h3>
-            <MyLink to={"/"}>Anasayfa</MyLink>
-            <MyLink to={"/hakkimizda"}>Hakkımıda</MyLink>
+            <h3 className="text-xl font-bold">{t("navbar.kurumsal")}</h3>
+            <MyLink to={"/"}>{t("navbar.anasayfa")}</MyLink>
+            <MyLink to={"/hakkimizda"}>{t("navbar.hakkimizda")}</MyLink>
             <MyLink to={"/neden-petek-ve-leblebici"}>
-              Neden Petek & Leblebici
+              {t("navbar.nedenPL")}
             </MyLink>
-            <MyLink to={"/sikca-sorulan-sorular"}>Sıkça Sorulan Sorular</MyLink>
+            <MyLink to={"/sikca-sorulan-sorular"}>{t("navbar.sss")}</MyLink>
           </div>
 
           {/* SECTION 3rd Col */}
           <div className="max-w-48 flex flex-col gap-2 lg:gap-4 2xl:gap-2">
-            <h3 className="text-xl font-bold">Hukuk</h3>
-            <MyLink to={"/sigorta-hukuku"}>Sigorta Hukuku</MyLink>
-            <MyLink to={"/hukuki-danismanlik"}>Hukuki Danışmanlık</MyLink>
+            <h3 className="text-xl font-bold">{t("navbar.hukuk")}</h3>
+            <MyLink to={"/sigorta-hukuku"}>{t("navbar.sigortaH")}</MyLink>
+            <MyLink to={"/hukuki-danismanlik"}>{t("navbar.hukukiD")}</MyLink>
           </div>
 
           {/* SECTION 4th Col */}
           <div className="max-w-48 flex flex-col gap-2 lg:gap-4 2xl:gap-2">
-            <h3 className="text-xl font-bold">Hizmetler</h3>
+            <h3 className="text-xl font-bold">{t("navbar.hizmetler")}</h3>
             <MyLink to={"/onleyici-hukuk-hizmetleri"}>
-              Önleyici Hukuk Hizmetleri
+              {t("navbar.onleyiciHH")}
             </MyLink>
             <MyLink to={"/uzlastirma-ve-arabuluculuk-hizmetleri"}>
-              Uzlaştırma ve Arabuluculuk Hizmetleri
+              {t("navbar.uzlastirmaAH")}
             </MyLink>
             <MyLink to={"/kvkk-ve-gdpr-hukuki-danismanlik"}>
-              KVKK ve GDPR Hukuki Danışmanlık
+              {t("navbar.kGHD")}
             </MyLink>
           </div>
 
           {/* SECTION 5th Col */}
           <div className="max-w-56 flex flex-col gap-2 lg:gap-4 2xl:gap-2">
-            <h3 className="text-xl font-bold">İletişim Bilgilerimiz</h3>
+            <h3 className="text-xl font-bold">{t("navbar.iletisimB")}</h3>
             <a
               href="https://maps.app.goo.gl/FtXCg8qBD8bpc5NE6"
               target="_blank"
@@ -103,7 +106,7 @@ const Footer = () => {
               +90 507 264 40 80
             </a>
             <a
-              href="mailto:av.emreleblebici@gmail.com"
+              href="mailto:info@petekleblebicihukuk.com"
               className="text-neutral-300 hover:text-neutral-50 lg:text-xs xl:text-base"
             >
               info@petekleblebicihukuk.com
@@ -113,7 +116,7 @@ const Footer = () => {
       </div>
       <div className="h-[1.5px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
       <div className="p-4 flex justify-center items-center">
-        <p>&#169; 2024 Tüm Haklarımız Saklıdır.</p>
+        <p>&#169; 2024 {t("content.anasayfa.haklar")}</p>
       </div>
     </footer>
   );

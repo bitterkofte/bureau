@@ -1,23 +1,23 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
 
 const KVKK = () => {
+  const { t } = useTranslation();
+
   return (
     <PageLayout
-      heading={"KVKK ve GDPR Hukuki Danışmanlık"}
+      heading={t("navbar.kGHD")}
       highImg={highImg}
       lowImg={lowImg}
-      navigation={["Anasayfa", "Hizmetler", "KVKK ve GDPR Hukuki Danışmanlık"]}
+      navigation={[
+        t("navbar.anasayfa"),
+        t("navbar.hizmetler"),
+        t("navbar.kGHD"),
+      ]}
     >
-      Petek § Leblebici Hukuk ve Danışmanlık olarak, müvekkillerimizin KVKK
-      (Kişisel Verilerin Korunması Kanunu) ve GDPR (General Data Protection
-      Regulation) kapsamında hukuki gereksinimlerini karşılamak amacıyla
-      danışmanlık hizmetleri sunmaktayız. Uzman avukatlarımız, kişisel verilerin
-      korunması ve yönetilmesi konusunda müvekkillerimize rehberlik ederek, uyum
-      süreçlerini en etkin şekilde yönetmelerine yardımcı olur. Veri ihlalleri
-      ve hukuki riskleri minimize etmek için gerekli hukuki tedbirleri alarak,
-      müvekkillerimizin veri güvenliğini ve hukuki uyumunu sağlamaktayız.
+      {t("content.hizmetler.kGHD")}
     </PageLayout>
   );
 };

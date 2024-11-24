@@ -1,34 +1,39 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
+import resources from "../../i18n";
+// import { parseTextToHtml } from "../../functions/parseTextIntoHtml";
 
 const NedenPetekLeblebici = () => {
+  const { t } = useTranslation();
   return (
     <PageLayout
-      heading={"Neden Petek & Leblebici?"}
+      heading={t("navbar.nedenPL")}
       highImg={highImg}
       lowImg={lowImg}
-      navigation={["Anasayfa", "Kurumsal", "Neden Petek & Leblebici?"]}
+      navigation={[
+        t("navbar.anasayfa"),
+        t("navbar.kurumsal"),
+        t("navbar.nedenPL"),
+      ]}
     >
       <ul className="list-disc flex flex-col gap-4">
         <li>
-          <strong>Uzman Kadro</strong>: Sigorta, gayrimenkul ve bilişim hukuku
-          gibi özel alanlarda uzmanlaşmış, deneyimli avukatlardan oluşan
-          ekibimizle, müvekkillerimize en yüksek kalitede hizmet sunuyoruz.
+          <strong>{t("content.kurumsal.nedenPL.head1")}</strong>:{"  "}
+          {t("content.kurumsal.nedenPL.desc1")}
         </li>
         <li>
-          <strong>Kişiye Özel Çözümler</strong>: Her müvekkilin ihtiyaçlarına
-          özel, kişiselleştirilmiş hukuki çözümler sunarak, etkili ve tatmin
-          edici sonuçlar elde ediyoruz.
+          <strong>{t("content.kurumsal.nedenPL.head2")}</strong>:{"  "}
+          {t("content.kurumsal.nedenPL.desc2")}
         </li>
         <li>
-          <strong>Şeffaf ve Etkili İletişim</strong>: Sürecin her aşamasında
-          açık ve sürekli iletişim anlayışımızla, müvekkillerimizi her konuda
-          bilgilendiriyoruz ve sürecin şeffaf olmasını sağlıyoruz.
+          <strong>{t("content.kurumsal.nedenPL.head3")}</strong>:{"  "}
+          {t("content.kurumsal.nedenPL.desc3")}
         </li>
         <li>
-          <strong>Stratejik Yaklaşım</strong>: Hukuki sorunları proaktif bir
-          şekilde ele alarak, stratejik ve uzun vadeli çözümler üretiyoruz.
+          <strong>{t("content.kurumsal.nedenPL.head4")}</strong>:{"  "}
+          {t("content.kurumsal.nedenPL.desc4")}
         </li>
       </ul>
     </PageLayout>

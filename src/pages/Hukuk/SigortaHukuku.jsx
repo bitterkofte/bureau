@@ -1,20 +1,22 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import highImg from "../../assets/lazyLoad/bookshelves-high.jpg";
 import lowImg from "../../assets/lazyLoad/bookshelves-low.jpg";
+import { useTranslation } from "react-i18next";
 
 const SigortaHukuku = () => {
+  const { t } = useTranslation();
   return (
     <PageLayout
-      heading={"Sigorta Hukuku"}
+      heading={t("navbar.sigortaH")}
       highImg={highImg}
       lowImg={lowImg}
-      navigation={["Anasayfa", "Hukuk", "Sigorta Hukuku"]}
+      navigation={[
+        t("navbar.anasayfa"),
+        t("navbar.hizmetler"),
+        t("navbar.sigortaH"),
+      ]}
     >
-      Sigorta Hukuku alanında müvekkillerimize kapsamlı hizmetler sunuyoruz.
-      Sigorta sektörünün öncü firmalarından QUICK SİGORTA A.Ş. ve CORPUS SİGORTA
-      A.Ş.'nin vekilliğini yapmaktayız ve danışmanlık hizmeti vermekteyiz.
-      Deneyimli ekibimiz ile sigorta hukuku alanındaki sorunlarınıza etkili ve
-      hızlı çözümler üretiyoruz.
+      {t("content.hukuk.sigortaH")}
     </PageLayout>
   );
 };
